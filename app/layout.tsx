@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import ThemeWrapper from '@/theme/ThemeWrapper';
+import { Inter, Montserrat, Oswald } from 'next/font/google';
+import ThemeWrapper from '@/src/theme/ThemeWrapper';
 import CssBaseline from '@mui/material/CssBaseline';
+import EmotionProvider from './emotion-provider';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const inter = Inter({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ['latin'], weight: ['800', '900'] });
+const oswald = Oswald({ subsets: ['latin'], weight: ['700'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,12 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeWrapper>
-          <CssBaseline />
-          {children}
-        </ThemeWrapper>
+    <html lang="pt" suppressHydrationWarning>
+      <body className={inter.className}>
+        <EmotionProvider>
+          <ThemeWrapper>
+            <CssBaseline />
+            {children}
+          </ThemeWrapper>
+        </EmotionProvider>
       </body>
     </html>
   );
