@@ -1,6 +1,4 @@
 'use client';
-
-// Remova 'useTheme' se não for usá-lo para lógica complexa
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 

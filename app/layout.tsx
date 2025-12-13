@@ -3,6 +3,7 @@ import { Inter, Montserrat, Oswald } from 'next/font/google';
 import ThemeWrapper from '@/src/theme/ThemeWrapper';
 import CssBaseline from '@mui/material/CssBaseline';
 import EmotionProvider from './emotion-provider';
+import AppStructure from '@/src/components/layout/AppStructure';
 
 const inter = Inter({ subsets: ['latin'] });
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['800', '900'] });
@@ -24,7 +25,7 @@ export default function RootLayout({
         <EmotionProvider>
           <ThemeWrapper>
             <CssBaseline />
-            {children}
+            <AppStructure>{children}</AppStructure>
           </ThemeWrapper>
         </EmotionProvider>
       </body>
