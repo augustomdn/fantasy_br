@@ -1,3 +1,5 @@
+import ThemeWrapper from "@/theme/ThemeWrapper";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,9 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br" suppressHydrationWarning>
       <body>
-        {children}
+        <AppRouterCacheProvider>
+          <ThemeWrapper>
+            {children}
+          </ThemeWrapper>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
