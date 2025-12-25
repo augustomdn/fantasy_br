@@ -1,3 +1,4 @@
+import AppBarComponent from "@/components/appbar/AppBarComponent";
 import Box from "@mui/material/Box";
 
 export default function PublicLayout({
@@ -7,6 +8,7 @@ export default function PublicLayout({
 }>) {
   return (
     <Box>
+      <AppBarComponent />
       <h1>Public</h1>
       {children}
     </Box>

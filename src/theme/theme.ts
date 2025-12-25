@@ -2,6 +2,7 @@
 
 import { createTheme } from "@mui/material/styles";
 import { Roboto } from 'next/font/google';
+import Link from "next/link";
 
 // Configuração da fonte via Next.js (Otimizada)
 const roboto = Roboto({
@@ -14,16 +15,19 @@ const theme = createTheme({
     // 1. COLOR PALLETE
     palette: {
         primary: {
-            main: '#113C4A'
+            main: '#3F7B70'
         },
         secondary: {
             main: '#265A5C',
         },
-        // Cores de status, fundo, texto, etc.
         background: {
-            default: '#3F7B70',
+            default: '#113C4A',
             paper: '#EFECE9',
         },
+        text: {
+            primary: '#FFFFFF',
+            secondary: '#2A324B'
+        }
     },
 
     // 2. TIPOGRAFIA
@@ -50,6 +54,14 @@ const theme = createTheme({
             md: 960,
             lg: 1280,
             xl: 1920,
+        },
+    },
+
+    components: {
+        MuiButton: {
+            defaultProps: {
+                LinkComponent: Link,
+            },
         },
     },
 });
